@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,6 +39,7 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -140,8 +140,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63157647}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: -2.28, y: -4.5, z: -1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.2}
   m_Children:
   - {fileID: 787689449}
   - {fileID: 639290632}
@@ -156,10 +156,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 63157647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74dc8efa4cb649c4eb7d10a913aed7b1, type: 3}
+  m_Script: {fileID: 11500000, guid: fbb6852cfb0304598b4517bd709850be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  speed: 5
 --- !u!50 &63157650
 Rigidbody2D:
   serializedVersion: 4
@@ -193,6 +193,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -214,7 +215,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dd56ba302d3fd20458ea94132f11d988, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 484ba8aef23cd47169afad0ce7691d39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,7 +234,7 @@ Animator:
   m_GameObject: {fileID: 63157647}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 829271d2ca20c3f43b3a7f00f93e4ea5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 97becb0742bcf4fa688bb875d84c1632, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -241,6 +242,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &63157653
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -286,6 +288,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -307,12 +310,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb16b3192d3aa794783f3887289084ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ade1f1572cf254579acf48beb7a1b0ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16.95, y: 7.21}
+  m_Size: {x: 20.48, y: 12.44}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -325,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 535417259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -345,13 +348,13 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -8.955573, y: -0.16308078}
-  - {x: -3.0136225, y: 1.2629375}
-  - {x: 1.2724524, y: 2.1846452}
-  - {x: 4.6745405, y: 0.9292735}
-  - {x: 8.253441, y: -0.63068354}
-  - {x: -2.0709743, y: -3.2680898}
-  - {x: -8.956894, y: -0.1633572}
+  - {x: -18.80921, y: -0.22466609}
+  - {x: -7.201418, y: 6.559267}
+  - {x: 5.0907345, y: 14.132179}
+  - {x: 11.017818, y: 8.627427}
+  - {x: 18.793003, y: 1.0334584}
+  - {x: -5.624913, y: -13.149776}
+  - {x: -18.748945, y: -0.22494268}
 --- !u!1 &573615159
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +385,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -403,7 +407,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 016f27764c4b0194aacd1e45ef6988b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99f04feaa594a4d819cfcad03ff6c7e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -520,7 +524,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -623,7 +627,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 787689448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f8f1da2c489eb04194372111a613792, type: 3}
+  m_Script: {fileID: 11500000, guid: e7a8043c76b0c4429835bd6e90abebe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1850532769
@@ -650,11 +654,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1850532769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbc72d1acfcfae48b9b307963ec4836, type: 3}
+  m_Script: {fileID: 11500000, guid: 0127dbc0abc654f63833378b7f7252e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numDirt: 10
-  dirt: {fileID: 114655127102575150, guid: 7312946cd50c5ac4dbceed04e72c22e1, type: 2}
+  dirt: {fileID: 114074701484315530, guid: 747eaf7501e7d4226800d3b833cc08a4, type: 2}
   ecBg: {fileID: 535417262}
   pcHole: {fileID: 573615162}
   player: {fileID: 63157647}
