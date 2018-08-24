@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour {
     public EdgeCollider2D ecBg;
     public PolygonCollider2D pcHole;
     public GameObject player;
+	//public DoorController door;
+
+	private 
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +24,12 @@ public class GameController : MonoBehaviour {
         {
             ResetGame();
         }
+
+		/*
+		if (DirtLeft () == 0) {
+			
+		}
+		*/
 	}
 
     void ResetGame() {        
@@ -57,4 +66,8 @@ public class GameController : MonoBehaviour {
             }
         }
     }
+
+	int DirtLeft() {
+		return GameObject.FindGameObjectsWithTag("Dirt").Length;
+	}
 }

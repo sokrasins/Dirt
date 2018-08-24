@@ -53,6 +53,6 @@ public class PlayerController : MonoBehaviour {
 			playerAnimator.SetBool ("walking", false);
 		}
 
-		sr.sortingOrder = Mathf.RoundToInt ((10.0f- gameObject.transform.position.y)*100);
+		sr.sortingOrder = Mathf.RoundToInt ((20.0f- gameObject.transform.position.y)*100);
 	}
 }
