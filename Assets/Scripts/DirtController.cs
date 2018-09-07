@@ -8,6 +8,11 @@ public class DirtController : MonoBehaviour {
 
     private PolygonCollider2D pc;
     private SpriteRenderer sr;
+	private float zPos = -1;
+
+	public DirtController (Vector2 position) {
+		gameObject.transform.position = new Vector3(position.x, position.y, zPos);
+	}
 
     // Use this for initialization
     void Start () {
