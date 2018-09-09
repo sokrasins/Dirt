@@ -4,26 +4,46 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private SpriteRenderer sr;
+    private Vector2 spawnOffset;
+    private DoorController link;
 
-	// TODO: Hacky. FIgure out a good way of transitioning through levels.
-	// MVP: teleporting
-	// next: animation
-	// Dynamic building of levels and the spacing between them
-	// benchmarks for teleporing
-	void OnCollisionEnter2D(Collision2D collision) {
-		//Debug.Log("You're inside meeeeee");
-		Vector3 pos = collision.gameObject.transform.position;
-		pos.x = 8.64f;
-		pos.y = -14.09f;
-		collision.gameObject.transform.position = pos;
-	}
+    void Awake() {
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        spawnOffset = new Vector2(-0.5f, -1.47f);
+    }
+
+    // Use this for initialization
+    void Start() {
+       
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        collision.gameObject.GetComponent<PlayerController>().Teleport(link.TeleportLoc());
+    }
+
+    public void SetUp(bool dir) {
+        if (dir) {
+            sr.sprite = Resources.Load<Sprite>("Sprites/upwardDoor");
+        } else {
+            sr.sprite = Resources.Load<Sprite>("Sprites/downwardDoor");
+        }
+    }
+
+    public void RegisterLink(DoorController door) {
+        link = door;
+    }
+
+    public Vector3 TeleportLoc() {
+        return gameObject.transform.position + (Vector3)spawnOffset;
+    }
+
+    public void Disable() {
+        gameObject.SetActive(false);
+    }
 }
