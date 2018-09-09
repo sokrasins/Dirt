@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 787689451}
   m_Layer: 0
   m_Name: Broom
-  m_TagString: Untagged
+  m_TagString: Broom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

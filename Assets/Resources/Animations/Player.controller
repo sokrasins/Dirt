@@ -82,7 +82,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: PlayerWalk
-  m_Speed: 0.3
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101025242078776342}
@@ -95,7 +95,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 518fe8bf94dc94ec08054b3ff6739e3f, type: 2}
+  m_Motion: {fileID: 7400000, guid: f39ce4cd99089b5498eddc5833c4254e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

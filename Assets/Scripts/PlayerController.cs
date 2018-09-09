@@ -66,16 +66,19 @@ public class PlayerController : MonoBehaviour {
 	private void Ghost (bool state) {
 		sr.enabled = !state;
 		gameObject.GetComponent<CircleCollider2D> ().enabled = !state;
-		gameObject.GetComponentsInChildren<BoxCollider2D> ()[0].enabled = !state;
-
-	}
+        GameObject.FindGameObjectsWithTag("Broom")[0].GetComponent<BroomController>().Ghost(state);
+    }
 
     public void Teleport(Vector2 newLoc) {
         moveLock = true;
 		Ghost (true);
-		StartCoroutine (MoveToLoc (newLoc, 0.01f));
-        //gameObject.transform.position = newLoc;
-        
+        playerAnimator.SetBool("walking", false);
+
+        Vector3 lScale = gameObject.transform.localScale;
+        lScale.x = Mathf.Abs(lScale.x) * -1f;
+        gameObject.transform.localScale = lScale;
+
+        StartCoroutine (MoveToLoc (newLoc, 0.01f));
     }
 
 	private IEnumerator MoveToLoc(Vector2 newLoc, float waitTime) {
@@ -96,14 +99,9 @@ public class PlayerController : MonoBehaviour {
 			yield return new WaitForSeconds (waitTime);
 			timetot -= waitTime;
 		}
-		Ghost (false);
 
 		rb.velocity = Vector2.zero;
-
-		Vector3 lScale = gameObject.transform.localScale;
-		lScale.x = Mathf.Abs(lScale.x) * -1f;
-		gameObject.transform.localScale = lScale;
-
-		moveLock = false;
+        Ghost(false);
+        moveLock = false;
 	}
 }
