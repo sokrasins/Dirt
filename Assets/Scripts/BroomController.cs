@@ -27,12 +27,12 @@ public class BroomController : MonoBehaviour
     // Called when broom touched anything
     void OnCollisionEnter2D(Collision2D col)
     {
-        if ( dirt == null && col.gameObject.tag == "Dirt" )
+		if ( dirt == null && col.gameObject.tag == "Dirt" )
         {
             dirt = col.gameObject;
             dirt.GetComponent<DirtController>().sweep();
         }
-        else if (dirt != null && col.gameObject.name == "Hole")
+        else if (dirt != null && col.gameObject.tag == "Hole")
         {
             Object.Destroy(dirt);
             dirt = null;

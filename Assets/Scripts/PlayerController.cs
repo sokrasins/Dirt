@@ -56,21 +56,54 @@ public class PlayerController : MonoBehaviour {
             } else {
                 playerAnimator.SetBool("walking", false);
             }
-        } else if (move.magnitude < Vector2.kEpsilon) {
-            moveLock = false;
-        }
+        } //else if (move.magnitude < Vector2.kEpsilon) {
+          //  moveLock = false;
+        //}
 
         sr.sortingOrder = Mathf.RoundToInt((20.0f - gameObject.transform.position.y) * 100);
     }
 
+	private void Ghost (bool state) {
+		sr.enabled = !state;
+		gameObject.GetComponent<CircleCollider2D> ().enabled = !state;
+		gameObject.GetComponentsInChildren<BoxCollider2D> ()[0].enabled = !state;
+
+	}
+
     public void Teleport(Vector2 newLoc) {
         moveLock = true;
-
-        gameObject.transform.position = newLoc;
-        rb.velocity = Vector2.zero;
-
-        Vector3 lScale = gameObject.transform.localScale;
-        lScale.x = Mathf.Abs(lScale.x) * -1f;
-        gameObject.transform.localScale = lScale;
+		Ghost (true);
+		StartCoroutine (MoveToLoc (newLoc, 0.01f));
+        //gameObject.transform.position = newLoc;
+        
     }
+
+	private IEnumerator MoveToLoc(Vector2 newLoc, float waitTime) {
+		var timetot = 1f;
+		while (((Vector2)gameObject.transform.position-newLoc).magnitude > Vector2.kEpsilon) {
+			
+			var vel = (Vector3) rb.velocity;
+			gameObject.transform.position = Vector3.SmoothDamp (
+				gameObject.transform.position, 
+				(Vector3)newLoc, 
+				ref vel, 
+				timetot, 
+				Mathf.Infinity, 
+				waitTime
+			);
+			rb.velocity = vel;
+
+			yield return new WaitForSeconds (waitTime);
+			timetot -= waitTime;
+		}
+		Ghost (false);
+
+		rb.velocity = Vector2.zero;
+
+		Vector3 lScale = gameObject.transform.localScale;
+		lScale.x = Mathf.Abs(lScale.x) * -1f;
+		gameObject.transform.localScale = lScale;
+
+		moveLock = false;
+	}
 }

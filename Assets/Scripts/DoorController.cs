@@ -10,7 +10,7 @@ public class DoorController : MonoBehaviour {
 
     void Awake() {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        spawnOffset = new Vector2(-0.5f, -1.47f);
+        spawnOffset = new Vector2(-0.7f, -1.27f);
     }
 
     // Use this for initialization

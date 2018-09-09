@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dirt
   - Level
+  - Hole
   layers:
   - Default
   - TransparentFX
