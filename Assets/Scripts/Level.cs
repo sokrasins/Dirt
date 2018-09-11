@@ -18,12 +18,15 @@ public class Level : MonoBehaviour {
     private GameObject hole;
     private GameObject floor;
     private GameObject door;
+	private GameObject scrim;
 
     private Vector2 upDoorOffset = new Vector2(8.83f, 2.08f);
     private Vector2 downDoorOffset = new Vector2(7.22f, 3.56f);
 
     private DoorController upDoor;
     private DoorController downDoor;
+
+	private SpriteRenderer scrimSprite;
 
     // Use this for initialization
     public void Configure () {
@@ -35,6 +38,7 @@ public class Level : MonoBehaviour {
         hole = Resources.Load<GameObject>("Prefabs/Hole");
         floor = Resources.Load<GameObject>("Prefabs/Background");
         door = Resources.Load<GameObject>("Prefabs/Door");
+		scrim = Resources.Load<GameObject>("Prefabs/Scrim");
 
         // Set up level
         NewObjAtLocs(dirt, dirtLocs, -1.0f);
@@ -64,6 +68,14 @@ public class Level : MonoBehaviour {
         );
         downDoor = obj.GetComponent<DoorController>();
         downDoor.SetUp(false);
+
+		// Make scrim to darken level
+		obj = Instantiate<GameObject> (
+			scrim,
+			location,
+			Quaternion.identity
+		);
+		scrimSprite = obj.GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
@@ -112,4 +124,10 @@ public class Level : MonoBehaviour {
         lvl1.LinkDownDoor(lvl2.GetUpDoor());
         lvl2.LinkUpDoor(lvl1.GetDownDoor());
     }
+
+	public void SetScrim(float darkness) {
+		var color = scrimSprite.color;
+		color.a = darkness;
+		scrimSprite.color = color;
+	}
 }
