@@ -303,12 +303,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Ant.cs" />
     <Compile Include="Assets\Scripts\BroomController.cs" />
-    <Compile Include="Assets\Scripts\DirtController.cs" />
+    <Compile Include="Assets\Scripts\Dirt.cs" />
     <Compile Include="Assets\Scripts\DoorController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Level.cs" />
+    <Compile Include="Assets\Scripts\Pizza.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Soot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Users\sok\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />

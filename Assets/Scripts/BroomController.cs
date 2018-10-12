@@ -26,9 +26,7 @@ public class BroomController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col) {
 		if ( dirt == null && col.gameObject.tag == "Dirt" ) {
             dirt = col.gameObject;
-
-			// TODO: Subclasses!!!
-            dirt.GetComponent<AntDirtController>().sweep();
+            dirt.GetComponent<Dirt>().Sweep();
         }
         else if (dirt != null && col.gameObject.tag == "Hole") {
             Object.Destroy(dirt);

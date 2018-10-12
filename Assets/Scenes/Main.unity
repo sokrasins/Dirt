@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  dirt: {fileID: 1917284134052638, guid: 747eaf7501e7d4226800d3b833cc08a4, type: 2}
+  dirt: {fileID: 1993679041876238, guid: f9a9be545fca40b4e9d8fa993f206bad, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 4
-  dirt: {fileID: 1917284134052638, guid: 747eaf7501e7d4226800d3b833cc08a4, type: 2}
+  dirt: {fileID: 1993679041876238, guid: f9a9be545fca40b4e9d8fa993f206bad, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}
@@ -401,52 +401,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &195804765
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4235682410183674, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235682410183674, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 4.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235682410183674, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235682410183674, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235682410183674, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235682410183674, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235682410183674, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235682410183674, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856999599636098, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-      propertyPath: m_Name
-      value: Wall
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d75cb24927648430281b8c7710f799ce, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &639290628
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 7
-  dirt: {fileID: 1917284134052638, guid: 747eaf7501e7d4226800d3b833cc08a4, type: 2}
+  dirt: {fileID: 1993679041876238, guid: f9a9be545fca40b4e9d8fa993f206bad, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}
@@ -672,7 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 5
-  dirt: {fileID: 1917284134052638, guid: 747eaf7501e7d4226800d3b833cc08a4, type: 2}
+  dirt: {fileID: 1993679041876238, guid: f9a9be545fca40b4e9d8fa993f206bad, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}
@@ -722,7 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
-  dirt: {fileID: 1160743922377656, guid: 222b3f676717e4fd79ab384b960ecc76, type: 2}
+  dirt: {fileID: 1090117353077820, guid: d1ae4b8d11fab4cf2a61792ac8d73c1f, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}
@@ -812,7 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 8
-  dirt: {fileID: 1917284134052638, guid: 747eaf7501e7d4226800d3b833cc08a4, type: 2}
+  dirt: {fileID: 1993679041876238, guid: f9a9be545fca40b4e9d8fa993f206bad, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}
@@ -862,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 6
-  dirt: {fileID: 1917284134052638, guid: 747eaf7501e7d4226800d3b833cc08a4, type: 2}
+  dirt: {fileID: 1993679041876238, guid: f9a9be545fca40b4e9d8fa993f206bad, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}
@@ -912,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
-  dirt: {fileID: 1065370913668766, guid: 7c8b9023f9a034a45af14af748f6061b, type: 2}
+  dirt: {fileID: 1582617556681330, guid: 7c8b9023f9a034a45af14af748f6061b, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}

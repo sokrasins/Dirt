@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-	private float dimMax = 250f / 255f; //192.0f / 255.0f;
-
 	// Use this for initialization
 	void Start () {
         GameObject[] levelObjs = GameObject.FindGameObjectsWithTag("Level");
@@ -35,12 +33,12 @@ public class GameController : MonoBehaviour {
         levels[levels.Length - 1].GetDownDoor().Disable();
 
 		// Determine and set level dimness
-		int levelMin = levels[0].level;
-		int levelMax = levels[levels.Length-1].level;
+		//int levelMin = levels[0].level;
+		//nt levelMax = levels[levels.Length-1].level;
 
-		foreach (Level i in levels) {
-			i.SetScrim (dimMax * (float)(i.level - levelMin) / (float)(levelMax - levelMin));
-		}
+		//foreach (Level i in levels) {
+		//	i.SetScrim (dimMax * (float)(i.level - levelMin) / (float)(levelMax - levelMin));
+		//}
     }
 	
 	// Update is called once per frame

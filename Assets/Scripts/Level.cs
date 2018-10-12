@@ -18,7 +18,6 @@ public class Level : MonoBehaviour {
     private GameObject hole;
     private GameObject floor;
     private GameObject door;
-	private GameObject scrim;
 	private GameObject chimney;
 
     private Vector2 upDoorOffset = new Vector2(8.83f, 2.08f);
@@ -31,8 +30,6 @@ public class Level : MonoBehaviour {
 
 	private GameObject wall;
 
-	private SpriteRenderer scrimSprite;
-
     // Use this for initialization
     public void Configure () {
 
@@ -41,9 +38,8 @@ public class Level : MonoBehaviour {
 
         // Assign resources
         hole = Resources.Load<GameObject>("Prefabs/Hole");
-        floor = Resources.Load<GameObject>("Prefabs/Background");
+        floor = Resources.Load<GameObject>("Prefabs/Floor");
         door = Resources.Load<GameObject>("Prefabs/Door");
-		scrim = Resources.Load<GameObject>("Prefabs/Scrim");
 		wall = Resources.Load<GameObject>("Prefabs/Wall");
 		chimney = Resources.Load<GameObject>("Prefabs/Chimney");
 
@@ -73,14 +69,16 @@ public class Level : MonoBehaviour {
 			location + wallOffset,
 			Quaternion.identity
 		);
+        obj.transform.parent = gameObject.transform;
 
-		// Make chimney
-		obj = Instantiate<GameObject> (
+        // Make chimney
+        obj = Instantiate<GameObject> (
 			chimney,
 			location + chimneyOffset,
 			Quaternion.identity
 		);
-		obj.GetComponent<SpriteRenderer> ().sortingOrder = Mathf.RoundToInt(100*location.y);
+        obj.transform.parent = gameObject.transform;
+        obj.GetComponent<SpriteRenderer> ().sortingOrder = Mathf.RoundToInt(100*location.y);
 			
         // Make up door
         obj = Instantiate<GameObject>(
@@ -101,15 +99,6 @@ public class Level : MonoBehaviour {
         obj.transform.parent = gameObject.transform;
         downDoor = obj.GetComponent<DoorController>();
         downDoor.SetUp(false);
-
-		// Make scrim to darken level
-		obj = Instantiate<GameObject> (
-			scrim,
-			location,
-			Quaternion.identity
-		);
-        obj.transform.parent = gameObject.transform;
-        scrimSprite = obj.GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
@@ -158,10 +147,4 @@ public class Level : MonoBehaviour {
         lvl1.LinkDownDoor(lvl2.GetUpDoor());
         lvl2.LinkUpDoor(lvl1.GetDownDoor());
     }
-
-	public void SetScrim(float darkness) {
-		var color = scrimSprite.color;
-		color.a = darkness;
-		scrimSprite.color = color;
-	}
 }
