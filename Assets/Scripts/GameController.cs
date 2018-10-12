@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-	private float dimMax = 192.0f / 255.0f;
+	private float dimMax = 250f / 255f; //192.0f / 255.0f;
 
 	// Use this for initialization
 	void Start () {

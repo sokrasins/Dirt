@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AntDirtController.cs" />
      <Compile Include="Assets\Scripts\BroomController.cs" />
      <Compile Include="Assets\Scripts\DirtController.cs" />
      <Compile Include="Assets\Scripts\DoorController.cs" />

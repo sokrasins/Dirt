@@ -19,12 +19,17 @@ public class Level : MonoBehaviour {
     private GameObject floor;
     private GameObject door;
 	private GameObject scrim;
+	private GameObject chimney;
 
     private Vector2 upDoorOffset = new Vector2(8.83f, 2.08f);
     private Vector2 downDoorOffset = new Vector2(7.22f, 3.56f);
+	private Vector2 wallOffset = new Vector2(-3.47f, 4.1f);
+	private Vector2 chimneyOffset = new Vector2(-8.4f, 2.95f);
 
     private DoorController upDoor;
     private DoorController downDoor;
+
+	private GameObject wall;
 
 	private SpriteRenderer scrimSprite;
 
@@ -39,20 +44,37 @@ public class Level : MonoBehaviour {
         floor = Resources.Load<GameObject>("Prefabs/Background");
         door = Resources.Load<GameObject>("Prefabs/Door");
 		scrim = Resources.Load<GameObject>("Prefabs/Scrim");
+		wall = Resources.Load<GameObject>("Prefabs/Wall");
+		chimney = Resources.Load<GameObject>("Prefabs/Chimney");
 
         // Set up level
         NewObjAtLocs(dirt, dirtLocs, -1.0f);
 		NewObjAtLocs(hole, holeLocs, -1.0f);
 
         // Make floor
-        Instantiate<GameObject>(
+        GameObject obj = Instantiate<GameObject>(
             floor,
             location,
 			Quaternion.identity
 		);
 
+		// Make wall
+		obj = Instantiate<GameObject> (
+			wall,
+			location + wallOffset,
+			Quaternion.identity
+		);
+
+		// Make chimney
+		obj = Instantiate<GameObject> (
+			chimney,
+			location + chimneyOffset,
+			Quaternion.identity
+		);
+		obj.GetComponent<SpriteRenderer> ().sortingOrder = Mathf.RoundToInt(100*location.y);
+			
         // Make up door
-        GameObject obj = Instantiate<GameObject>(
+        obj = Instantiate<GameObject>(
             door,
             location + upDoorOffset,
             Quaternion.identity
