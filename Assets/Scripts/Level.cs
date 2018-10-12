@@ -47,9 +47,17 @@ public class Level : MonoBehaviour {
 		wall = Resources.Load<GameObject>("Prefabs/Wall");
 		chimney = Resources.Load<GameObject>("Prefabs/Chimney");
 
-        // Set up level
-        NewObjAtLocs(dirt, dirtLocs, -1.0f);
-		NewObjAtLocs(hole, holeLocs, -1.0f);
+        // Instantiate each dirt
+        var newDirt = NewObjAtLocs(dirt, dirtLocs, -1.0f);
+        foreach (GameObject i in newDirt) {
+            i.transform.parent = gameObject.transform;
+        }
+
+        // Instantiate each hole
+		var newHole = NewObjAtLocs(hole, holeLocs, -1.0f);
+        foreach (GameObject i in newHole) {
+            i.transform.parent = gameObject.transform;
+        }
 
         // Make floor
         GameObject obj = Instantiate<GameObject>(
@@ -57,6 +65,7 @@ public class Level : MonoBehaviour {
             location,
 			Quaternion.identity
 		);
+        obj.transform.parent = gameObject.transform;
 
 		// Make wall
 		obj = Instantiate<GameObject> (
@@ -79,6 +88,7 @@ public class Level : MonoBehaviour {
             location + upDoorOffset,
             Quaternion.identity
         );
+        obj.transform.parent = gameObject.transform;
         upDoor = obj.GetComponent<DoorController>();
         upDoor.SetUp(true);
 
@@ -88,6 +98,7 @@ public class Level : MonoBehaviour {
             location + downDoorOffset,
             Quaternion.identity
         );
+        obj.transform.parent = gameObject.transform;
         downDoor = obj.GetComponent<DoorController>();
         downDoor.SetUp(false);
 
@@ -97,7 +108,8 @@ public class Level : MonoBehaviour {
 			location,
 			Quaternion.identity
 		);
-		scrimSprite = obj.GetComponent<SpriteRenderer>();
+        obj.transform.parent = gameObject.transform;
+        scrimSprite = obj.GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
