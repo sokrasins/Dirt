@@ -33,8 +33,7 @@ public class Level : MonoBehaviour {
     // Use this for initialization
     public void Configure () {
 
-        location.x = 0f;
-        location.y = (level - 1) * -15f;
+        location = GetLevelPos(level);
 
         // Assign resources
         hole = Resources.Load<GameObject>("Prefabs/Hole");
@@ -46,13 +45,13 @@ public class Level : MonoBehaviour {
         // Instantiate each dirt
         var newDirt = NewObjAtLocs(dirt, dirtLocs, -1.0f);
         foreach (GameObject i in newDirt) {
-            i.transform.parent = gameObject.transform;
+            SetLevelAsParent(i);
         }
 
         // Instantiate each hole
 		var newHole = NewObjAtLocs(hole, holeLocs, -1.0f);
         foreach (GameObject i in newHole) {
-            i.transform.parent = gameObject.transform;
+            SetLevelAsParent(i);
         }
 
         // Make floor
@@ -61,15 +60,17 @@ public class Level : MonoBehaviour {
             location,
 			Quaternion.identity
 		);
-        obj.transform.parent = gameObject.transform;
+        SetLevelAsParent(obj);
+        obj.GetComponent<IsoRenderOrder>().SetBottom(0);
 
-		// Make wall
-		obj = Instantiate<GameObject> (
+        // Make wall
+        obj = Instantiate<GameObject> (
 			wall,
 			location + wallOffset,
 			Quaternion.identity
 		);
-        obj.transform.parent = gameObject.transform;
+        SetLevelAsParent(obj);
+        obj.GetComponent<IsoRenderOrder>().SetBottom(1);
 
         // Make chimney
         obj = Instantiate<GameObject> (
@@ -77,8 +78,7 @@ public class Level : MonoBehaviour {
 			location + chimneyOffset,
 			Quaternion.identity
 		);
-        obj.transform.parent = gameObject.transform;
-        obj.GetComponent<SpriteRenderer> ().sortingOrder = Mathf.RoundToInt(100*location.y);
+        SetLevelAsParent(obj);
 			
         // Make up door
         obj = Instantiate<GameObject>(
@@ -86,7 +86,7 @@ public class Level : MonoBehaviour {
             location + upDoorOffset,
             Quaternion.identity
         );
-        obj.transform.parent = gameObject.transform;
+        SetLevelAsParent(obj);
         upDoor = obj.GetComponent<DoorController>();
         upDoor.SetUp(true);
 
@@ -96,7 +96,7 @@ public class Level : MonoBehaviour {
             location + downDoorOffset,
             Quaternion.identity
         );
-        obj.transform.parent = gameObject.transform;
+        SetLevelAsParent(obj);
         downDoor = obj.GetComponent<DoorController>();
         downDoor.SetUp(false);
     }
@@ -146,5 +146,18 @@ public class Level : MonoBehaviour {
     public static void LinkLevels(Level lvl1, Level lvl2) {
         lvl1.LinkDownDoor(lvl2.GetUpDoor());
         lvl2.LinkUpDoor(lvl1.GetDownDoor());
+    }
+
+    public void SetRenderOrder(GameObject obj) {
+        obj.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(100 * location.y) + 1;
+    }
+
+    public void SetLevelAsParent(GameObject obj) {
+        obj.transform.parent = gameObject.transform;
+        obj.GetComponent<IsoRenderOrder>().LevelNum = level;
+    }
+
+    public static Vector2 GetLevelPos(int levelNum) {
+        return new Vector2(0f, (levelNum - 1) * -15f);
     }
 }

@@ -27,7 +27,7 @@ public abstract class Dirt : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void Update () {
-        sr.sortingOrder = Mathf.RoundToInt((20.0f - gameObject.transform.position.y) * 100);
+        
     }
 
     public void Sweep() {

@@ -59,8 +59,6 @@ public class PlayerController : MonoBehaviour {
         } //else if (move.magnitude < Vector2.kEpsilon) {
           //  moveLock = false;
         //}
-
-        sr.sortingOrder = Mathf.RoundToInt((20.0f - gameObject.transform.position.y) * 100);
     }
 
 	private void Ghost (bool state) {
@@ -77,6 +75,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 lScale = gameObject.transform.localScale;
         lScale.x = Mathf.Abs(lScale.x) * -1f;
         gameObject.transform.localScale = lScale;
+        gameObject.GetComponent<IsoRenderOrder>().LevelNum = gameObject.GetComponent<IsoRenderOrder>().LevelNum + 1;
 
         StartCoroutine (MoveToLoc (newLoc, 0.01f));
     }

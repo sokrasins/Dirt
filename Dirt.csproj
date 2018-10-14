@@ -308,6 +308,7 @@
     <Compile Include="Assets\Scripts\Dirt.cs" />
     <Compile Include="Assets\Scripts\DoorController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\IsoRenderOrder.cs" />
     <Compile Include="Assets\Scripts\Level.cs" />
     <Compile Include="Assets\Scripts\Pizza.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
