@@ -5,13 +5,7 @@ using UnityEngine;
 public class Level2 : Level {
 
     public Vector2 antHillLoc;
-
-    /*
-    // Use this for initialization
-    void Start() {
-
-    }
-    */
+    public int antsToSpawn;
 
     public override void Configure() {
         base.Configure();
@@ -25,6 +19,9 @@ public class Level2 : Level {
             Quaternion.identity
         );
         SetLevelAsParent(obj);
+
+        obj.GetComponent<AntHill>().MakeAnts(antsToSpawn, gameObject);
+
     }
 
 }

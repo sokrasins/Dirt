@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AntHill : Dirt {
 
-    public int antsToSpawn = 20;
+    private List<GameObject> antList;
 
     public AntHill(Vector2 position) : base(position) {
         // Nothing!
@@ -22,16 +22,28 @@ public class AntHill : Dirt {
 
     // Make ants!!!
     public override void SweepCallback() {
+        foreach (GameObject ant in antList) {
+            ant.SetActive(true);
+        }
+    }
+
+    /*public List<Ant>*/ public void MakeAnts(int toSpawn, GameObject parent) {
+        // Set up ants
         GameObject obj;
-        var parent = gameObject.transform.parent;
+        GameObject ant = Resources.Load<GameObject>("Prefabs/Ant");
 
-        for (int i=0; i<antsToSpawn; i++) {
-            //obj = Instantiate<GameObject>(
-            //    wall,
-            //    location + wallOffset,
-            //    Quaternion.identity
-            //);
+        antList = new List<GameObject>();
 
+        for (int i = 0; i < toSpawn; i++) {
+            obj = Instantiate<GameObject>(
+                ant,
+                gameObject.transform.position,
+                Quaternion.identity
+            );
+
+            obj.SetActive(false);
+            parent.GetComponent<Level>().SetLevelAsParent(obj);
+            antList.Add(obj);
         }
     }
 }
