@@ -9,11 +9,10 @@ public class Level : MonoBehaviour {
 
     public GameObject dirt;
 	public List<Vector2> dirtLocs;
-
     public List<Vector2> holeLocs;
 
     // Private vars
-    private Vector2 location;
+    protected Vector2 location;
 
     private GameObject hole;
     private GameObject floor;
@@ -31,7 +30,7 @@ public class Level : MonoBehaviour {
 	private GameObject wall;
 
     // Use this for initialization
-    public void Configure () {
+    public virtual void Configure () {
 
         location = GetLevelPos(level);
 
@@ -100,22 +99,13 @@ public class Level : MonoBehaviour {
         downDoor = obj.GetComponent<DoorController>();
         downDoor.SetUp(false);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	int DirtLeft() {
-		return GameObject.FindGameObjectsWithTag("Dirt").Length;
-	}
 
 	private List<T> NewObjAtLocs<T>(T obj, List<Vector2> locs, float zPos) where T:Object {
         List<T> objs = new List<T>();
         for (int i = 0; i < locs.Count; i++) {
             Vector3 pos = new Vector3(
                 locs[i].x + location.x,
-                locs[i].x + location.y,
+                locs[i].y + location.y,
                 zPos
             );
 

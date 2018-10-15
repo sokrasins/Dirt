@@ -34,5 +34,8 @@ public abstract class Dirt : MonoBehaviour {
         sr.sprite = swept;
         pc.enabled = false;
         gameObject.GetComponent<Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
+        SweepCallback();
     }
+
+    public virtual void SweepCallback() { ; }
 }

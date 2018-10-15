@@ -15,14 +15,12 @@ public class IsoRenderOrder : MonoBehaviour {
 
     public bool updateDuringRuntime = false;
 
-    private SpriteRenderer sr;
     private int levelOffset = 2500;
     private int levelSpan = 700;
 
 	// Use this for initialization
 	void Start () {
-        sr = gameObject.GetComponent<SpriteRenderer>();
-        //SetOrder();
+
     }
 	
 	// Update is called once per frame

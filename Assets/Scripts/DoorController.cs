@@ -7,6 +7,7 @@ public class DoorController : MonoBehaviour {
     private SpriteRenderer sr;
     private Vector2 spawnOffset;
     private DoorController link;
+    private bool up;
 
     void Awake() {
         sr = gameObject.GetComponent<SpriteRenderer>();
@@ -24,7 +25,7 @@ public class DoorController : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        collision.gameObject.GetComponent<PlayerController>().Teleport(link.TeleportLoc());
+        collision.gameObject.GetComponent<PlayerController>().Teleport(link.TeleportLoc(), up);
     }
 
     public void SetUp(bool dir) {
@@ -33,6 +34,7 @@ public class DoorController : MonoBehaviour {
         } else {
             sr.sprite = Resources.Load<Sprite>("Sprites/downwardDoor");
         }
+        up = dir;
     }
 
     public void RegisterLink(DoorController door) {

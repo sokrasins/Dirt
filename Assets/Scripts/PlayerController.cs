@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour {
         GameObject.FindGameObjectsWithTag("Broom")[0].GetComponent<BroomController>().Ghost(state);
     }
 
-    public void Teleport(Vector2 newLoc) {
+    public void Teleport(Vector2 newLoc, bool up) {
         moveLock = true;
 		Ghost (true);
         playerAnimator.SetBool("walking", false);
@@ -75,7 +75,12 @@ public class PlayerController : MonoBehaviour {
         Vector3 lScale = gameObject.transform.localScale;
         lScale.x = Mathf.Abs(lScale.x) * -1f;
         gameObject.transform.localScale = lScale;
-        gameObject.GetComponent<IsoRenderOrder>().LevelNum = gameObject.GetComponent<IsoRenderOrder>().LevelNum + 1;
+
+        if (up) {
+            gameObject.GetComponent<IsoRenderOrder>().LevelNum = gameObject.GetComponent<IsoRenderOrder>().LevelNum - 1;
+        } else {
+            gameObject.GetComponent<IsoRenderOrder>().LevelNum = gameObject.GetComponent<IsoRenderOrder>().LevelNum + 1;
+        }
 
         StartCoroutine (MoveToLoc (newLoc, 0.01f));
     }
@@ -103,4 +108,6 @@ public class PlayerController : MonoBehaviour {
         Ghost(false);
         moveLock = false;
 	}
+
+
 }
