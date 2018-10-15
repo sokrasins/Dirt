@@ -349,7 +349,7 @@ MonoBehaviour:
   - {x: -0.65, y: 2.12}
   - {x: 3.86, y: 1.69}
   - {x: -3.56, y: -3.56}
-  - {x: -3.56, y: -3.56}
+  - {x: -6.06, y: -0.43}
   holeLocs:
   - {x: -1, y: -0.89}
 --- !u!4 &65215041
@@ -456,7 +456,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 0}
+  m_BackGroundColor: {r: 0.93333334, g: 0.93333334, b: 0.93333334, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -852,6 +852,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2118985724
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4088939962765170, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088939962765170, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088939962765170, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088939962765170, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088939962765170, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088939962765170, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088939962765170, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088939962765170, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 212151603506895876, guid: dff7f7db9a274400ba3ca1bceede6d64,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 212151603506895876, guid: dff7f7db9a274400ba3ca1bceede6d64,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 212151603506895876, guid: dff7f7db9a274400ba3ca1bceede6d64,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dff7f7db9a274400ba3ca1bceede6d64, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2129501986
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +947,7 @@ MonoBehaviour:
   holeLocs:
   - {x: 1.56, y: 2.7}
   antHillLoc: {x: -1, y: -0.89}
+  antsToSpawn: 20
 --- !u!4 &2129501988
 Transform:
   m_ObjectHideFlags: 0
