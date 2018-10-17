@@ -25,7 +25,9 @@ public class DoorController : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        collision.gameObject.GetComponent<PlayerController>().Teleport(link.TeleportLoc(), up);
+		if (collision.gameObject.tag == "Player") {
+			collision.gameObject.GetComponent<PlayerController> ().Teleport (link.TeleportLoc (), up);
+		}
     }
 
     public void SetUp(bool dir) {

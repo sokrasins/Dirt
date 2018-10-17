@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7249c0a02f9194897bfbf73f8d61f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNum: 1
+  levelNum: 2
   updateDuringRuntime: 1
 --- !u!114 &114527272181222152
 MonoBehaviour:
@@ -124,6 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swept: {fileID: 21300000, guid: 68041b2d679e74b48af8063421ce1d05, type: 3}
+  moveTime: 0.2
+  moveProb: 0.02
+  velBound: 1
+  wiggleBound: 0.5
 --- !u!212 &212923076927211006
 SpriteRenderer:
   m_ObjectHideFlags: 1

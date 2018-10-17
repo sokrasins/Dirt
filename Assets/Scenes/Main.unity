@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 63157655}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,6 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  startLoc: {x: -2.62, y: -5.12}
+  startLevel: 1
 --- !u!50 &63157650
 Rigidbody2D:
   serializedVersion: 4
@@ -690,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
-  dirt: {fileID: 1722985213432302, guid: d1ae4b8d11fab4cf2a61792ac8d73c1f, type: 2}
+  dirt: {fileID: 1890136631305292, guid: d1ae4b8d11fab4cf2a61792ac8d73c1f, type: 2}
   dirtLocs:
   - {x: 1.7, y: 1}
   - {x: 4.5, y: 2.2}

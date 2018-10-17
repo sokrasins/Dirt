@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float speed;
+	public Vector2 startLoc;
+	public int startLevel;
 
     private Rigidbody2D rb;
     private Animator playerAnimator;
@@ -20,6 +22,11 @@ public class PlayerController : MonoBehaviour {
         rb.freezeRotation = true;
 
         moveLock = false;
+
+		// Set starting position
+		startLoc.y = startLoc.y + (startLevel - 1) * -15.0f;
+		gameObject.transform.position = startLoc;
+		gameObject.GetComponent<IsoRenderOrder>().LevelNum = startLevel;
     }
 
     // Update is called once per frame

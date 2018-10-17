@@ -53,13 +53,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AntDirtController.cs" />
+     <Compile Include="Assets\Scripts\Ant.cs" />
+     <Compile Include="Assets\Scripts\AntHill.cs" />
      <Compile Include="Assets\Scripts\BroomController.cs" />
-     <Compile Include="Assets\Scripts\DirtController.cs" />
+     <Compile Include="Assets\Scripts\Dirt.cs" />
      <Compile Include="Assets\Scripts\DoorController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\IsoRenderOrder.cs" />
      <Compile Include="Assets\Scripts\Level.cs" />
+     <Compile Include="Assets\Scripts\Level1.cs" />
+     <Compile Include="Assets\Scripts\Level2.cs" />
+     <Compile Include="Assets\Scripts\Level3.cs" />
+     <Compile Include="Assets\Scripts\Pizza.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Soot.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/home/sok/git/Dirt/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
