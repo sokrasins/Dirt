@@ -30,6 +30,10 @@ public class BroomController : MonoBehaviour
         }
         else if (dirt != null && col.gameObject.tag == "Hole") {
             Object.Destroy(dirt);
+
+            GameController gc = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+            gc.PlaySound();
+
             dirt = null;
         }
     }
